@@ -1,32 +1,21 @@
 import React from 'react';
 import { BrowserRouter as BRouter, Route, Link } from 'react-router-dom';
-
+import WeekPage from './WeekPage';
+import DayPage from './DayPage';
 
 const Router = () => (
     <BRouter>
         <div>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/page1">Page 1</Link></li>
+                <li><Link to="/today">Page 1</Link></li>
             </ul>
             
             
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/page1" component={Page1}/>
+            <Route exact path="/" component={WeekPage}/>
+            <Route exact path="/today" component={DayPage}/>
         </div>
     </BRouter>
-)
-
-const Home = () => (
-    <div>
-        <h1>Home</h1>
-    </div>
-)
-
-const Page1 = () => (
-    <div>
-        <h1>Page 1</h1>
-    </div>
 )
 
 export default Router;
